@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-dimension",
-  "description": "Gatsby Starter - Dimension by HTML5 UP",
+  "name": "goatnbike-starter",
+  "description": "Goatnbike Starter",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Renate W Ravnaas",
   "dependencies": {
     "gatsby": "^1.9.118",
     "gatsby-image": "^1.0.35",
@@ -19,7 +19,7 @@
     "gatsby-transformer-sharp": "^1.6.14",
     "lodash": "^4.17.4"
   },
-  "homepage": "https://github.com/ChangoMan/gatsby-starter-dimension",
+  "homepage": "https://github.com/renatewr/goatnbikestarter",
   "keywords": [
     "bike"
   ],
@@ -27,7 +27,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChangoMan/gatsby-starter-dimension.git"
+    "url": "https://github.com/renatewr/goatnbikestarter.git"
   },
   "scripts": {
     "dev": "gatsby develop",
