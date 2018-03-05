@@ -5,10 +5,8 @@ import Link from 'gatsby-link'
 const SecondPage = (props) => {
 
   const articles = props.art
-  
-  console.log(articles)
   return (
-  <div>    
+    <div id="main" style={props.timeout ? {display: 'flex'} : {display: 'none'}}>  
     {articles.map(({ node: { title, slug, body, featuredImage } }) => (
       <article key={slug} id={slug} className={`${props.article === slug ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{slug}</h2>
@@ -17,21 +15,7 @@ const SecondPage = (props) => {
           {props.close}
         </article>
     ))}
-  </div>
-  )
-}
-
-class Main extends React.Component {
-  
-  render() {
-
-    let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
-
-    return (
-      <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
-      <SecondPage art={this.props.art} article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
-        
-        <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+    <article id="contact" className={`${props.article === 'contact' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Contact</h2>
           <form method="post" action="#">
             <div className="field half first">
@@ -59,8 +43,18 @@ class Main extends React.Component {
           </ul>
           {close}
         </article>
+  </div>
+  )
+}
 
-      </div>
+class Main extends React.Component {
+  
+  render() {
+
+    let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
+
+    return (
+      <SecondPage art={this.props.art} article={this.props.article} timeout={this.props.timeout} articleTimeout={this.props.articleTimeout} close={close}/>
     )
   }
 }
