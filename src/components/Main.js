@@ -9,7 +9,7 @@ const SecondPage = (props) => {
     <div id="main" style={props.timeout ? {display: 'flex'} : {display: 'none'}}>  
     {articles.map(({ node: { title, slug, body, featuredImage } }) => (
       <article key={slug} id={slug} className={`${props.article === slug ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">{slug}</h2>
+          <h2 className="major">{title}</h2>
           <span className="image main"><img src={featuredImage.responsiveResolution.src} alt="" /></span>
           <div dangerouslySetInnerHTML={ { __html: body.childMarkdownRemark.html } }></div>
           {props.close}
