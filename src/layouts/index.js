@@ -129,7 +129,7 @@ export const pageQuery = graphql`
               }
             }
             featuredImage {
-              responsiveResolution(width: 100) {
+              responsiveResolution(width: 300) {
                 width
                 height
                 src
