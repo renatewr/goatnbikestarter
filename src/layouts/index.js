@@ -78,6 +78,8 @@ class Template extends React.Component {
     const art = this.props.data.art.edges
     const siteTitle = this.props.data.siteMetadata.edges.title
     const siteDescription = this.props.data.siteMetadata.edges.leadingText
+    const homepage = this.props.data.siteMetadata.edges[0].node
+    const gbBackgroundImage = this.props.data.siteMetadata.edges[0].node.backgroundImages[0].responsiveResolution.src
 
     return (
       <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
@@ -88,7 +90,7 @@ class Template extends React.Component {
 
         <div id="wrapper">
 
-          <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} art={art} />
+          <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} art={art} home={homepage} />
           <Main
             isArticleVisible={this.state.isArticleVisible}
             timeout={this.state.timeout}
@@ -101,7 +103,7 @@ class Template extends React.Component {
           <Footer timeout={this.state.timeout} />
 
         </div>
-        <div id="bg"></div>
+        <div id="bg" style={{backgroundImage: "url(" + gbBackgroundImage + ")"}}></div>
       </div>
     )
   }
@@ -143,6 +145,7 @@ export const pageQuery = graphql`
         edges {
           node {
             id
+            title
             leadingText{
               leadingText
             }
