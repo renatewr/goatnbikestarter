@@ -41,7 +41,7 @@ const SecondPage = (props) => {
             <li><a href="#" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
             <li><a href="#" className="icon fa-github"><span className="label">GitHub</span></a></li>
           </ul>
-          {close}
+          {props.close}
         </article>
   </div>
   )
