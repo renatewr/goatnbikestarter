@@ -1,10 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
-
 
 const SecondPage = (props) => {
 
@@ -13,10 +9,10 @@ const SecondPage = (props) => {
   console.log(articles)
   return (
   <div>    
-    {articles.map(({ node: { title, slug, body } }) => (
-      <article id={slug} className={`${props.article === slug ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+    {articles.map(({ node: { title, slug, body, featuredImage } }) => (
+      <article key={slug} id={slug} className={`${props.article === slug ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{slug}</h2>
-          <span className="image main"><img src={pic01} alt="" /></span>
+          <span className="image main"><img src={featuredImage.responsiveResolution.src} alt="" /></span>
           <div dangerouslySetInnerHTML={ { __html: body.childMarkdownRemark.html } }></div>
           {props.close}
         </article>
@@ -71,7 +67,7 @@ class Main extends React.Component {
 
 Main.propTypes = {
   route: React.PropTypes.object,
-  art: React.PropTypes.object,
+  art: React.PropTypes.array,
   article: React.PropTypes.string,
   articleTimeout: React.PropTypes.bool,
   onCloseArticle: React.PropTypes.func,

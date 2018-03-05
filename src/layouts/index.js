@@ -76,8 +76,8 @@ class Template extends React.Component {
 
   render() {
     const art = this.props.data.art.edges
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const siteDescription = this.props.data.site.siteMetadata.description
+    const siteTitle = this.props.data.siteMetadata.edges.title
+    const siteDescription = this.props.data.siteMetadata.edges.leadingText
 
     return (
       <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
@@ -128,14 +128,39 @@ export const pageQuery = graphql`
                 html
               }
             }
+            featuredImage {
+              responsiveResolution(width: 100) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      },
+      siteMetadata:allContentfulHome {
+        edges {
+          node {
+            id
+            leadingText{
+              leadingText
+            }
+            backgroundImages{
+              responsiveResolution(width: 800) {
+                  width
+                  height
+                  src
+                  srcSet
+                }
+            }
+            logo {
+              file {
+                url
+              }
+              }
           }
         }
       }
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
   }
 `
