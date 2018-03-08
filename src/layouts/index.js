@@ -131,7 +131,7 @@ export const pageQuery = graphql`
               }
             }
             featuredImage {
-              responsiveResolution(width: 300) {
+              responsiveResolution(width: 600) {
                 width
                 height
                 src
@@ -150,7 +150,7 @@ export const pageQuery = graphql`
               leadingText
             }
             backgroundImages{
-              responsiveResolution(width: 800) {
+              responsiveResolution(width: 1800) {
                   width
                   height
                   src
