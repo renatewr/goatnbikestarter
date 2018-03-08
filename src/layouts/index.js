@@ -150,7 +150,7 @@ export const pageQuery = graphql`
               leadingText
             }
             backgroundImages{
-              responsiveResolution(width: 1800) {
+              responsiveResolution(width: 2800) {
                   width
                   height
                   src
