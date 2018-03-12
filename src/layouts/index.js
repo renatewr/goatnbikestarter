@@ -76,9 +76,9 @@ class Template extends React.Component {
 
   render() {
     const art = this.props.data.art.edges
-    const siteTitle = this.props.data.siteMetadata.edges.title
     const siteDescription = this.props.data.siteMetadata.edges.leadingText
     const homepage = this.props.data.siteMetadata.edges[0].node
+    const siteTitle = this.props.data.siteMetadata.edges[0].node.title
     const gbBackgroundImage = this.props.data.siteMetadata.edges[0].node.backgroundImages[0].responsiveResolution.src
 
     return (
