@@ -7,10 +7,6 @@ const Product = ({ node, props }) => (
   )
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
-    <ul className="icons">            
-            <li><a href="https://www.instagram.com/goatnbike/" target="_blank" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
-          </ul>
-        
         <div className="content">
             <div className="inner">
                 <h1>{props.home.title}</h1>
