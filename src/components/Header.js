@@ -7,6 +7,9 @@ const Product = ({ node, props }) => (
   )
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
+    <ul className="icons">            
+            <li><a href="https://www.instagram.com/goatnbike/" target="_blank" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
+          </ul>
         
         <div className="content">
             <div className="inner">
@@ -18,8 +21,7 @@ const Header = (props) => (
             <ul>
             {props.art.map(({ node }, i) => (
                 <Product node={node} key={node.id} props={props} />                
-              ))}
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('contact')}}>Contact</a></li>
+              ))}                
             </ul>
         </nav>
         
