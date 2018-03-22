@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import SignUp from '../components/SignUp'
+import ReactGA from 'react-ga';
 
 class Template extends React.Component {
   constructor(props) {
@@ -22,6 +23,9 @@ class Template extends React.Component {
   }
 
   componentDidMount () {
+    ReactGA.initialize('UA-116290019-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
     }, 100);
