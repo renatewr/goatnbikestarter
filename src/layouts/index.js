@@ -87,6 +87,7 @@ class Template extends React.Component {
         <Helmet>
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
+            <meta name="google-site-verification" content="MCxY6L1Z6T2zILpt_7rT_xxsHt2K_PgDnAJtDITNxxo" />
         </Helmet>
 
         <div id="wrapper">
