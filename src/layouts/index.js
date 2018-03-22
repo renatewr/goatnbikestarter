@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+import SignUp from '../components/SignUp'
 
 class Template extends React.Component {
   constructor(props) {
@@ -72,13 +73,13 @@ class Template extends React.Component {
       })
     }, 350)
 
-  }
+  }  
 
   render() {
     const art = this.props.data.art.edges
-    const siteDescription = this.props.data.siteMetadata.edges.leadingText
+    const siteDescription = this.props.data.siteMetadata.edges[0].node.metaDescription
     const homepage = this.props.data.siteMetadata.edges[0].node
-    const siteTitle = this.props.data.siteMetadata.edges[0].node.title
+    const siteTitle = this.props.data.siteMetadata.edges[0].node.metaTitle
     const gbBackgroundImage = this.props.data.siteMetadata.edges[0].node.backgroundImages[0].responsiveResolution.src
 
     return (
@@ -99,7 +100,7 @@ class Template extends React.Component {
             onCloseArticle={this.handleCloseArticle}
             art={art}
           />
-          
+          <SignUp />
           <Footer timeout={this.state.timeout} />
 
         </div>
@@ -146,6 +147,8 @@ export const pageQuery = graphql`
           node {
             id
             title
+            metaTitle
+            metaDescription
             leadingText{
               leadingText
             }
