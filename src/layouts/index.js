@@ -105,7 +105,7 @@ class Template extends React.Component {
             onCloseArticle={this.handleCloseArticle}
             art={art}
           />
-          <SignUp />
+          
           <Footer timeout={this.state.timeout} />
 
         </div>

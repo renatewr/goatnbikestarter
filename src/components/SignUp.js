@@ -19,30 +19,30 @@ const CustomForm = ({ status, message, onValidated }) => {
       }      
       {
         status === "success" && 
-        <div angerouslySetInnerHTML={ { __html: message } }>
+        <div dangerouslySetInnerHTML={ { __html: message } }>
         {message}
         </div>
       }
       {
         status !== "success" && 
-        <div>
+        <div className="signup">
         <input 
         style={{ display: "none" }}     
         ref={node => (name = node)}
         type="text"
         placeholder="Your name"
       />
-      <br />
-      
-      <input
+      <h3>Sign up for updates!</h3>
+      <div className="signup-form"><input
         ref={node => (email = node)}
         type="email"
         placeholder="Your email"
       />
       <br />
-      <button onClick={submit}>
+      <button onClick={submit} className="special">
         Submit
       </button>
+      </div>
         </div>
       }
     </div>
@@ -54,9 +54,7 @@ class SignUp extends React.Component {
   render() {
     const url = 'https://goatnbike.us12.list-manage.com/subscribe/post?u=d0d83b49d8fcb13f79207dfc6&amp;id=f6b4838105'
 
-    return (
-      <div style={{width: '60vw'}}>        
-        <h2>Sign up for updates!</h2>
+    return (        
         <MailchimpSubscribe
           url={url}
           render={({ subscribe, status, message }) => (
@@ -67,8 +65,6 @@ class SignUp extends React.Component {
             />
           )}
         />
-      </div>
-
     )
   }
 }

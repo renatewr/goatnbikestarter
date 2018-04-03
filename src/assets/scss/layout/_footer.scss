@@ -34,4 +34,20 @@
 		.body.is-loading & {
 			opacity: 0;
 		}
+		.signup {
+			width:60vw;
+			margin: 0 auto;
+			margin-bottom:10px;
+			.signup-form {
+				display: flex;
+				
+				flex-wrap:wrap;
+			}
+			input {
+				width: 80%;
+    align-self: center;
+    flex: 1 0 auto;
+			}
+		}
+		
 	}

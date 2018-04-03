@@ -1,9 +1,11 @@
 import React from 'react'
+import SignUp from './SignUp'
 
 
 const Footer = (props) => (
     
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
+    <SignUp />
     <ul className="icons">            
             <li><a href="https://www.instagram.com/goatnbike/" target="_blank" className="icon fa-instagram"><span className="label">Instagram</span></a></li>
     </ul>
