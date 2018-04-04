@@ -92,6 +92,11 @@ class Template extends React.Component {
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
             <meta name="google-site-verification" content="MCxY6L1Z6T2zILpt_7rT_xxsHt2K_PgDnAJtDITNxxo" />
+            <meta property="og:title" content={siteTitle} />
+            <meta property="og:description" content={siteDescription} />
+            <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+            <meta property="og:image" content={gbBackgroundImage} />
+            <meta property="og:image:alt" content={siteTitle} />
         </Helmet>
 
         <div id="wrapper">
