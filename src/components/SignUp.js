@@ -1,8 +1,11 @@
 import React from 'react'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
+
 const CustomForm = ({ status, message, onValidated }) => {
   let email, name;
+  const dispMessage = status === 'success' || status === 'error' ;
+
   const submit = () =>
     email &&    
     email.value.indexOf("@") > -1 &&
@@ -13,16 +16,10 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <div>
       {status === "sending" && <div>sending...</div>}
-      {
-        status === "error" && 
+      { 
+        dispMessage && 
         <div dangerouslySetInnerHTML={ { __html: message } }></div>
       }      
-      {
-        status === "success" && 
-        <div dangerouslySetInnerHTML={ { __html: message } }>
-        {message}
-        </div>
-      }
       {
         status !== "success" && 
         <div className="signup">
