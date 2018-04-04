@@ -95,7 +95,7 @@ class Template extends React.Component {
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={siteDescription} />
             <meta property="og:url" content="https://www.goatnbike.com" />
-            <meta property="og:image" content={gbBackgroundImage} />
+            <meta property="og:image" content={'https://images.ctfassets.net/zysy44islyfs/7cHIWjWaxas2SQOaO486Aa/c6aedf03bf3650fe444a88699f7c1f58/IMG_4010.jpg?w=530&'} />
             <meta property="og:image:alt" content={siteTitle} />
         </Helmet>
 
