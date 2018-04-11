@@ -115,7 +115,7 @@ class Template extends React.Component {
           <Footer timeout={this.state.timeout} />
 
         </div>
-        <div id="bg" style={{backgroundImage: "url(" + gbBackgroundImage + ")"}}></div>
+        <div id="bg" style={{backgroundImage: "url(" + gbBackgroundImage + ")", backgroundPosition : '50% 10%'}}></div>
       </div>
     )
   }
